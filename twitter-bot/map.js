@@ -9,16 +9,6 @@ var fs = require('fs');
 //var longtitude = fs.readFileSync('/home/vlado/github/bike-lane-report/twitter-bot/longtitude', 'utf8');
 //var longtitude = '40.617509';
 //var latitude = '-73.981311'
-function geolocation = whereami(error,callback) 
-	if (error){
-		console.log("error");
-		console.log(error);
-	}
-	else {
-		console.log('geolocation success', data);
-		callback(data.rows[0]);
-	
-};
 		
 
 var location = `http://www.google.com/maps/place/${geolocation}`;
