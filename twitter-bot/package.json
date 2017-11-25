@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mejs/bike-lane-report#readme",
   "dependencies": {
+    "twit": "^2.2.9",
     "twitter": "^1.7.1"
   }
 }
