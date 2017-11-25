@@ -3,16 +3,12 @@
 var twitter = require('twitter');
 var config = require('./config.js');
 var T = new twitter(config);
-var whereami = require('@rafaelrinaldi/whereami');
+var curl = require('curlrequest');
 var fs = require('fs');
-//var geo = fs.readFileSync('/home/vlado/github/bike-lane-report/twitter-bot/geo', 'utf8');
-//var longtitude = fs.readFileSync('/home/vlado/github/bike-lane-report/twitter-bot/longtitude', 'utf8');
-//var longtitude = '40.617509';
-//var latitude = '-73.981311'
-		
+var geolocation = fs.readFileSync('/home/vlado/github/bike-lane-report/twitter-bot/geo', 'utf8');
+
 
 var location = `http://www.google.com/maps/place/${geolocation}`;
-//var s = `http://www.google.com/maps/place/${location}`;
 photo = fs.readFileSync('/home/vlado/github/bike-lane-report/camera/tweet.jpg', { encoding: 'base64' });
 
 T.post('media/upload', { media_data: photo }, function (err, data, response) {
