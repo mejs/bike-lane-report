@@ -6,6 +6,7 @@ var T = new twitter(config);
 var curl = require('curlrequest');
 var fs = require('fs');
 var geolocation = fs.readFileSync('/home/vlado/github/bike-lane-report/twitter-bot/geo', 'utf8');
+var geo = curl.request({ url: 'ipinfo.io/loc'});
 
 
 var location = `http://www.google.com/maps/place/${geolocation}`;
@@ -33,4 +34,4 @@ else{
       }
 });
 
-console.log(geolocation);
+console.log(geo);
