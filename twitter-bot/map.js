@@ -5,12 +5,23 @@ var config = require('./config.js');
 var T = new twitter(config);
 var curl = require('curlrequest');
 var fs = require('fs');
-var geolocation = fs.readFileSync('/home/vlado/github/bike-lane-report/twitter-bot/geo', 'utf8');
-var geo = curl.request({ url: 'ipinfo.io/loc'});
+//var geolocation = fs.readFileSync('/home/vlado/github/bike-lane-report/twitter-bot/geo', 'utf8');
 
 
-var location = `http://www.google.com/maps/place/${geolocation}`;
+
+//var location = `http://www.google.com/maps/place/${file}`;
 photo = fs.readFileSync('/home/vlado/github/bike-lane-report/camera/tweet.jpg', { encoding: 'base64' });
+geo = curl.request({ url: 'ipinfo.io/loc'}, function (err,file) {
+        if (err){
+        console.log('ERROR');
+        console.log(err);
+        }
+        else{
+                console.log('Suceess');
+                console.log(file);}
+
+
+var location = `http://www.google.com/maps/place/${file}`;
 
 T.post('media/upload', { media_data: photo }, function (err, data, response) {
   if (err){
@@ -33,5 +44,5 @@ else{
 
       }
 });
+});
 
-console.log(geo);
