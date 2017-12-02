@@ -10,7 +10,7 @@ var fs = require('fs');
 
 
 //var location = `http://www.google.com/maps/place/${file}`;
-photo = fs.readFileSync('/home/vlado/github/bike-lane-report/camera/tweet.jpg', { encoding: 'base64' });
+photo = fs.readFileSync('./camera/tweet.jpg', { encoding: 'base64' });
 geo = curl.request({ url: 'ipinfo.io/loc'}, function (err,file) {
         if (err){
         console.log('ERROR');
