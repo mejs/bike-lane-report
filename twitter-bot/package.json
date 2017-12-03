@@ -22,6 +22,7 @@
     "curlrequest": "^1.0.1",
     "gps": "^0.4.1",
     "raspicam": "^0.2.14",
+    "serialport": "^6.0.4",
     "twit": "^2.2.9",
     "twitter": "^1.7.1"
   }
