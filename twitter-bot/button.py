@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import RPi.GPIO as GPIO
 import time
 
@@ -12,13 +14,14 @@ try:
          if button_state == False:
 #             GPIO.output(24, True)
 		from subprocess import call
+                call(["nodejs", "/home/pi/github/bike-lane-report/twitter-bot/gps.js"])
                 call(["nodejs", "/home/pi/github/bike-lane-report/twitter-bot/camera.js"])
-		call(["nodejs", "/home/pi/github/bike-lane-report/twitter-bot/map.js"])
+		call(["nodejs", "/home/pi/github/bike-lane-report/twitter-bot/map-new.js"])
 #             print('Button Pressed...')
 		time.sleep(0.2)
          else:
 #             GPIO.output(24, False)
-             print('Button not pressed')
+             print('Button not pressed', end='\r')
 
 except:
     GPIO.cleanup()
