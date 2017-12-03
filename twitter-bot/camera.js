@@ -2,7 +2,7 @@ var RaspiCam = require("raspicam");
 
 var camera = new RaspiCam({
 	mode: "photo",
-	output: "./photo/image.jpg",
+	output: "./camera/tweet.jpg",
 	encoding: "jpg",
 	timeout: 0 // take the picture immediately
 });
@@ -20,3 +20,8 @@ camera.on("exit", function( timestamp ){
 });
 
 camera.start();
+
+
+setTimeout(function(){
+	camera.stop();
+}, 15000);

@@ -20,6 +20,7 @@
     "@google/maps": "^0.4.5",
     "@rafaelrinaldi/whereami": "^1.3.1",
     "curlrequest": "^1.0.1",
+    "gps": "^0.4.1",
     "raspicam": "^0.2.14",
     "twit": "^2.2.9",
     "twitter": "^1.7.1"
