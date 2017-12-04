@@ -46,5 +46,5 @@ parser.on('data', function(data) {
 setTimeout(function(){
 process.exit()
 
-}, 5000);
+}, 2000);
 
