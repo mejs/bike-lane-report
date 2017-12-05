@@ -16,7 +16,7 @@ const parser = new parsers.Readline({
 });
 
 const port = new SerialPort(file, {
-  baudRate: 4800
+  baudRate: 9600
 });
 
 port.pipe(parser);
@@ -25,7 +25,7 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/dashboard.html');
 });
 
-var GPS = require('../../gps.js');
+var GPS = require('gps');
 var gps = new GPS;
 
 http.listen(3000, function() {
