@@ -21,14 +21,16 @@ var GPS = require('gps');
 var gps = new GPS;
 
 gps.on('data', function(data) {
-
+  if(data){
   var lat1 = gps.state.lat;
   var lon1 = gps.state.lon;
   var location = `${lat1},${lon1}`;
 
   console.log("\033[2J\033[;H" + 
   "You are at (" + lat1 + ", " + lon1 + "),\n");
-  var fs = require('fs');
+ }
+ else console.log("error!");
+ var fs = require('fs');
 fs.writeFile("./geolocation.txt", location, function(err) {
     if(err) {
         return console.log(err);
@@ -43,8 +45,9 @@ fs.writeFile("./geolocation.txt", location, function(err) {
 parser.on('data', function(data) {
   gps.update(data);
 });
-setTimeout(function(){
-process.exit()
+//setTimeout(function(){
+//process.exit()
 
-}, 2000);
+//}, 10000);
 
+console.log ("help");
