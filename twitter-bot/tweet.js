@@ -5,9 +5,9 @@ var config = require('./config.js');
 var T = new twitter(config);
 var curl = require('curlrequest');
 var fs = require('fs');
-var geolocation = fs.readFileSync('./geolocation.txt', 'utf8');
+var geolocation = fs.readFileSync('/tmp/geolocation', 'utf8');
 
-photo = fs.readFileSync('./camera/tweet.jpg', { encoding: 'base64' });
+photo = fs.readFileSync('/tmp/tweet.jpg', { encoding: 'base64' });
 
 var location = `http://www.google.com/maps/place/${geolocation}`;
       console.log(location);

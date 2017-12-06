@@ -22,7 +22,7 @@ gps.on('data', function() {
 	var location = `${gps.state.lat},${gps.state.lon}`
 	console.log("\033[2J\033[;H" +
   "You are at (" + lat + ", " + lon + "),\n");
-fs.writeFile("./geolocation.txt", location, function(err) {
+fs.writeFile("/tmp/geolocation", location, function(err) {
     if(err) {
         return console.log(err);
     }

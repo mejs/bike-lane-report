@@ -16,7 +16,7 @@ try:
 		from subprocess import call
                 call(["python", "/home/pi/github/bike-lane-report/twitter-bot/camera.py"])
                 call(["nodejs", "/home/pi/github/bike-lane-report/twitter-bot/gps.js"])
-		call(["nodejs", "/home/pi/github/bike-lane-report/twitter-bot/map-new.js"])
+		call(["nodejs", "/home/pi/github/bike-lane-report/twitter-bot/tweet.js"])
 #             print('Button Pressed...')
 		time.sleep(0.2)
          else:

@@ -7,6 +7,6 @@ camera.rotation = 270
 
 camera.start_preview()
 sleep(2)
-camera.capture('./camera/tweet.jpg')
+camera.capture('/tmp/tweet.jpg')
 camera.stop_preview()
 
