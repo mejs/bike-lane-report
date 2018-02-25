@@ -15,10 +15,10 @@ port.pipe(parser);
 
 //gps grabs location
 
-gps.on('data', function() {
-	var location = `${gps.state.lat},${gps.state.lon}`
-	console.log(location);
-  });
+gps.on('data', function(parsed) {
+	console.log(`${gps.state.lat},${gps.state.lon}`);
+
+});
 
   parser.on('data', function(data) {
     gps.update(data);
