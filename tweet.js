@@ -1,16 +1,31 @@
-//link generator
+// twitter
 
 var twitter = require('twitter');
 var config = require('./config.js');
 var T = new twitter(config);
 var curl = require('curlrequest');
 var fs = require('fs');
-var geolocation = fs.readFileSync('/tmp/geolocation', 'utf8');
-
 photo = fs.readFileSync('/tmp/tweet.jpg', { encoding: 'base64' });
 
+//gps
+var fs = require('fs');
+var GPS = require('gps');
+var gps = new GPS;
+const file = '/dev/serial0';
+const SerialPort = require('serialport');
+const parsers = SerialPort.parsers;
+const parser = new parsers.Readline({ delimiter: '\r\n' });
+const port = new SerialPort(file, { baudRate: 9600 });
+port.pipe(parser);
+
+parser.on('data', function(data) {
+	gps.update(data);
+		console.log(`${gps.state.lat},${gps.state.lon}`);
+var geolocation = `${gps.state.lat},${gps.state.lon}`;
 var location = `http://www.google.com/maps/place/${geolocation}`;
-      console.log(location);
+
+//tweet
+
 T.post('media/upload', { media_data: photo }, function (err, data, response) {
   if (err){
       console.log(err);
@@ -31,4 +46,6 @@ else{
 
       }
 });
+callback
+	});
 
