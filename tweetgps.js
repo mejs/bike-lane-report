@@ -17,33 +17,11 @@ port.pipe(parser);
 
 gps.on('data', function() {
 	var location = `${gps.state.lat},${gps.state.lon}`
+	console.log(location);
   });
 
-//  parser.on('data', function(data) {
-//    gps.update(data);
-//});
-
-
-//tweets photo + location
-
-T.post('media/upload', { media_data: photo }, function (err, data, response) {
-  if (err){
-      console.log(err);
-    }
- else{
-      console.log('Uploaded an image!');
-
-T.post('statuses/update', {status: location, media_ids: data.media_id_string}, function(error, tweet, response) {
-  if (!error) {
-    console.log(tweet);
-  }
-else{
- console.log('Error!');
-            console.log(error);
-          }
-
+  parser.on('data', function(data) {
+    gps.update(data);
 });
 
-      }
-});
 
