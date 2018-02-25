@@ -27,25 +27,22 @@ var location = `http://www.google.com/maps/place/${geolocation}`;
 //tweet
 
 T.post('media/upload', { media_data: photo }, function (err, data, response) {
-  if (err){
-      console.log(err);
-    }
- else{
-      console.log('Uploaded an image!');
-
-T.post('statuses/update', {status: location, media_ids: data.media_id_string}, function(error, tweet, response) {
-  if (!error) {
-    console.log(tweet);
-  }
-else{
- console.log('Error!');
-            console.log(error);
-          }
-
+	if (err){
+		console.log(err);
+	   	 }
+	else{
+		console.log('Uploaded an image!');
+		T.post('statuses/update', {status: location, media_ids: data.media_id_string}, function(error, tweet, response) {
+ 		if (!error) {
+    			console.log(tweet);
+  		}
+		else{
+			console.log('Error!');
+				console.log(error);
+          					}
+					});
+				}
+			});
+	callback
 });
-
-      }
-});
-callback
-	});
 
