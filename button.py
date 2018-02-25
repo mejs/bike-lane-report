@@ -14,9 +14,9 @@ try:
          if button_state == False:
 #             GPIO.output(24, True)
 		from subprocess import call
-                call(["python", "~/camera.py"])
-                call(["nodejs", "~/gps.js"])
-		call(["nodejs", "~/tweet.js"])
+                call(["python", "camera.py"])
+                call(["nodejs", "gps.js"])
+		call(["nodejs", "tweet.js"])
 #             print('Button Pressed...')
 		time.sleep(0.2)
          else:
