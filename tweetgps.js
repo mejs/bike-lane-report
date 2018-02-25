@@ -19,9 +19,9 @@ gps.on('data', function() {
 	var location = `${gps.state.lat},${gps.state.lon}`
   });
 
-  parser.on('data', function(data) {
-    gps.update(data);
-});
+//  parser.on('data', function(data) {
+//    gps.update(data);
+//});
 
 
 //tweets photo + location
