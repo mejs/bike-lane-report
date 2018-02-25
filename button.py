@@ -13,23 +13,23 @@ try:
          button_state = GPIO.input(19)
          if button_state == False:
 #             GPIO.output(24, True)
+                print('Button pressed...')
 		from picamera import PiCamera
 		from time import sleep
 		camera = PiCamera()
-		camera.resolution = (3280, 2464)
+		camera.resolution = (960, 721)
 		camera.rotation = 270
 		camera.start_preview()
 		sleep(2)
 		camera.capture('/tmp/tweet.jpg')
 		camera.stop_preview()
-
+                print('Photo taken...')
 		from subprocess import call
                 call(["node", "tweet.js"])
-             print('Button Pressed...')
 		time.sleep(0.2)
          else:
 #             GPIO.output(24, False)
-             print('Button not pressed', end='\r')
+	      print('Button not pressed', end='\r')
 
 except:
     GPIO.cleanup()
