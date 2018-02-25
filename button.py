@@ -25,7 +25,7 @@ try:
 		camera.stop_preview()
                 print('Photo taken...')
 		from subprocess import call
-                call(["node", "tweet.js"])
+                call(["node", "/home/pi/github/bike-lane-report/tweet.js"])
 		time.sleep(0.2)
          else:
 #             GPIO.output(24, False)
