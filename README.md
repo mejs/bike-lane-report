@@ -1,7 +1,7 @@
 Bike Lane Report automates recording, geolocating and tweeting about vehicles parked in the bike lane.
 It runs on a Raspberry Pi Zero W with a GPS shield and PiCamera.
 
-!(https://i.imgur.com/M5vOgrK.png)
+![RPi](rpi.png)
 
 A Twitter account is setup with API keys from https://developer.twitter.com/
 
