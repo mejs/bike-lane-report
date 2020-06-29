@@ -15,3 +15,5 @@ When button on GPIO 24 is pressed, it takes a photo with PiCamera and saves it t
 tweet.js runs, checks gps coordinates using GPS.js library and saves them to variable as Google Maps link
 twitter library uploads the image from /tmp/tweet.jpg and adds the Google Maps link.
 
+![tweet example](tweet.png)
+This is what a tweet looks like.
