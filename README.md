@@ -16,4 +16,5 @@ tweet.js runs, checks gps coordinates using GPS.js library and saves them to var
 twitter library uploads the image from /tmp/tweet.jpg and adds the Google Maps link.
 
 ![tweet example](tweet.png)
+
 This is what a tweet looks like.
